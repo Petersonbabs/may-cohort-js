@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #content{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border: 1px solid;
+
+            h1{
+                color: red;
+            }
+        }
+
+        .address{
+            background-color: black;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="content">
+       
+    </div>
+
+    <script>
+
+        const storeInfo = {
+            companyName: "ALice Enterprice",
+            address: {
+                city: "Ibadan",
+                state:"Oyo",
+                branches: [
+                    {
+                        location: "Bestway",
+                        no: 5
+                    },
+                    {
+                        location: "Challenge",
+                        no: 7
+                    },
+                    {
+                        location: "Ring-Road",
+                        no: 16
+                    }
+                ]
+            }
+        }
+
+      
+        const contentEl = document.getElementById("content")
+
+        function display(){
+            contentEl.innerHTML = `
+                <div>
+                    <h1>${storeInfo.companyName}</h1>  
+                    <div class="address">
+                        <h3>Addresss</h3>
+                        <p>State: ${storeInfo.address.state }</p>
+                        <p>City: ${storeInfo.address.city}</p>
+                    </div>  
+                    <div>
+                        <h3>Branches</h3>
+                        <p>${storeInfo.address.branches[0].location}</p>
+                        <p></p>
+                    </div>  
+                </div>
+            `
+        }
+
+        display()
+    </script>
+</body>
+</html>

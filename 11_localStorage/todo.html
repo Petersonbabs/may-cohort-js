@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="type something" id="todo-input">
+        <button id="add" onclick="addTodo()">Add</button>
+    </div>
+
+    <ul id="todo-list">
+       
+    </ul>
+</body>
+
+<script>
+    const todoInputEl = document.getElementById("todo-input")
+    const todoListEl = document.getElementById("todo-list")
+    let todoItems = JSON.parse(localStorage.getItem("todo-items")) || []
+
+    
+    
+    // ADD TODO ITEM
+    const addTodo = ()=>{
+        // retrieve the value of the input
+        const todo = todoInputEl.value
+        // push it into the array of todoItems
+        todoItems.push(todo)
+        // save it into the localStorage
+        localStorage.setItem("todo-items", JSON.stringify(todoItems))
+        // call idsplay
+        displayItems()
+    }
+
+    // DISPLAY TODO ITEMS
+    const displayItems = ()=>{
+        // clear the screen
+        todoListEl.innerHTML = ""
+        // fetch the updated items from localstrorage
+        todoItems = JSON.parse(localStorage.getItem("todo-items")) || []
+        // check if it's empty
+        if(todoItems.length === 0){
+            todoListEl.innerHTML = "No item has been added"
+            return
+        }
+        // display the items
+        todoItems.forEach((ele, index)=>{
+            todoListEl.innerHTML += `
+                <li>${ele}</li>
+            `
+        })
+    }
+    
+    displayItems()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // const addTodo = ()=>{
+    //     const todo = todoInputEl.value
+    //     todoItems.push(todo)
+    //     localStorage.setItem("todo-items", JSON.stringify(todoItems))
+    //     display()
+    // }
+
+    // const display = ()=>{
+    //     todoListEl.innerHTML = ""
+    //     todoItems = JSON.parse(localStorage.getItem("todo-items"))
+    //     if(todoItems.length === 0){
+    //         todoListEl.textContent = "No todo item"
+    //         return
+    //     }
+        
+    //     todoItems.forEach((ele, index)=>{
+    //         todoListEl.innerHTML += `
+    //             <li>${index + 1} ${ele}</li>
+    //         `
+    //     })
+    // }
+
+    // display()
+    
+</script>
+</html>

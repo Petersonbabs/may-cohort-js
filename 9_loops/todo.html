@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h2>Todo list</h2>
+      <input type="text" id="todo-input" />
+      <button>Add</button>
+      <div id="todo-list"></div>
+    </div>
+  </body>
+
+  <script>
+    const todoInputEl = document.getElementById("todo-input")
+    const todoListEl = document.getElementById("todo-list")
+
+    let todoList = []
+
+    const display = ()=>{
+        const todoValue = todoInputEl.value
+        const name = "Peter"
+
+        const newTodoItem = {
+            value: todoValue,
+            name: name
+        }
+
+        todoList.push(newTodoItem) // [] => [ {value: "Read a book", name: "peter"}]
+        todoList.forEach((ele, index)=>{
+            todoListEl.innerHTML += `
+                <div>
+                    
+                    </div>
+            `
+        })
+
+    }
+
+  </script>
+</html>

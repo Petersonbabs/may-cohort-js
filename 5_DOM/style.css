@@ -1,0 +1,19 @@
+.box{
+    height: 200px;
+    width: 100px;
+    border: 4px solid;
+    transition: height 5s ease-in-out;
+}
+
+.parent{
+    display: flex;
+    flex-direction: column;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td{
+    padding: .5rem;
+}

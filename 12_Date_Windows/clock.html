@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .clock {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        border: 1px solid;
+        max-width: fit-content;
+        padding: 1rem;
+      }
+
+      .clock h2 {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <h2 id="hour">00</h2>
+      <h2 id="min">00</h2>
+      <span id="sec">00</span>
+    </div>
+    <br />
+    <br />
+    <div>
+      <input type="time" />
+      <input type="text" placeholder="Alarm label" /> <button>Set Alarm</button>
+    </div>
+
+    <button onclick="play()">Play</button>
+    <button onclick="pause()">Pause</button>
+
+    <button id="toggleMusic" onclick="toggleMusic()">Play</button>
+    
+    <script>
+    //   const music = new Audio(
+    //     "../audio/Solomon_Lange_-_Zuchiyata_My_Heart__CeeNaija.com_.mp3"
+    //   );
+    //   const musicBtn = document.getElementById("toggleMusic");
+
+    //   if (music.paused) {
+    //     musicBtn.textContent = "Play";
+    //   }
+
+    //   const toggleMusic = () =>{
+    //     if(music.paused){
+    //         music.play()
+    //         musicBtn.textContent = "Pause"
+    //     }else {
+    //         music.pause()
+    //         musicBtn.textContent = "Play"
+    //     }
+    //   }
+
+      //   const play = ()=>{
+      //     music.play()
+      //   }
+
+      //   const pause = ()=>{
+      //     music.pause()
+      //   }
+
+      const dt = new Date();
+      const hourEl = document.getElementById("hour");
+      const minEl = document.getElementById("min");
+      const secEl = document.getElementById("sec");
+
+      hourEl.textContent = dt.getHours();
+      minEl.textContent = dt.getMinutes();
+
+      setInterval(() => {
+        const dt = new Date();
+        secEl.textContent = dt.getSeconds();
+        minEl.textContent = dt.getMinutes();
+        hourEl.textContent = dt.getHours();
+      }, 1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Functions</title>
+  </head>
+  <body>
+    <h1>Js Functions</h1>
+
+    <script>
+
+        // alert("Welcome to our website")
+        // alert("A new product has been posted")
+        // alert("Your order as been recieved")
+        // alert("You have a fried request")
+
+        // basic syntax
+        
+        // function functionName(){
+            // code goes here...
+        // }
+
+                            // parameter 
+        function displayMessage(message){
+            alert(message)
+        }
+
+        
+
+        function add(num1, num2){
+            console.log(num1 + num2)
+            return num1 + num2
+        }
+
+       
+        // return
+
+        // const result = add(4, 8)
+        // console.log(result)
+
+        
+        function checkNumberPropoerty(num){
+            
+        }
+        
+        
+        
+
+        // const reult = checkNumberPropoerty(-8)
+        // console.log(reult);
+
+        // scope = global / local
+
+        // const name = "shola"
+        // console.log(name)
+
+        // function display(){
+        //     // const name = "peter"
+        //     console.log(name)
+        // }
+
+        // display()
+        
+        // function diaplay2(){
+        //     console.log(name)
+        // }
+
+        // diaplay2()
+
+        // if (6 > 5) {
+        //     // const name = "jeoj"
+        //     console.log(name)
+        // } else {
+            
+        // }
+
+        // random
+        // floor
+
+        // Math.random() : return a number between 0 (inclusive) - 1 (exclusive)
+        // Math.floor() : return an nearest ingeter of the number passed to it 
+
+        
+
+
+        // const randomNum = Math.random()
+        // const randomNum = Math.random() * 10
+        // console.log(randomNum);
+        // const flooredNum = Math.floor(56.09)
+        // console.log(flooredNum)
+
+        const cumputerNum = Math.floor(Math.random() * 10)
+        const playerNum = prompt("Guess a number between 0 - 10")
+        let score = 5
+ 
+
+        if(cumputerNum > playerNum){
+            alert("YOu lose. Computer guessed " + cumputerNum)
+            score--
+            console.log("new score is " + score)
+        } else if(playerNum > cumputerNum){
+            alert("YOu won. Computer guessed " + cumputerNum)
+            score++
+            console.log("new score is " + score)
+        }
+
+        
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="container"></ul>
+
+    <section id="school"></section>
+
+    <script>
+      let num = 1;
+      const students = ["james", "Lola", "Ade", "Raphael"];
+
+      let containerEl = document.getElementById("container");
+      let schoolEl = document.getElementById("school");
+
+      for (let index = 0; index < students.length; index++) {
+        containerEl.innerHTML += `
+            <li>${students[index]}</li>
+        `;
+      }
+
+      const courses = [
+        {
+          name: "Cs",
+          head: "Adeshola",
+        },
+        {
+          name: "English",
+          head: "Aderinde",
+        },
+        {
+          name: "Physics",
+          head: "Olarsioghsg",
+        },
+        {
+          name: "Chemistry",
+          head: "John doe",
+        },
+      ];
+
+      function display() {
+        for (let index = 0; index < courses.length; index++) {
+          schoolEl.innerHTML += `
+            <div>
+                <h2>${courses[index].head}</h2> 
+                <p>${courses[index].name}</p>   
+            </div>
+          `;
+        }
+      }
+
+      // FOR LOOP
+      //     intial        condition    increment
+      // for(expressions1, expression2, expression3){
+      // code goes here...
+      // }
+
+      // for - loops through a block of code a number of times
+      // for/in - loops through the properties/key of an object
+      // for/of - loops through the values of an iterable object
+      // while - loops through a block of code while a specified condition is true
+      // do/while - also loops through a block of code while a specified condition is true
+
+      const arr = ["peter", "ade", 90, true]
+      const student = {
+        name: "ade",
+        age: 25,
+        phone: 908978876
+      }
+
+      for (wdfg in student){
+        console.log(wdfg)
+      }
+      
+      for (jhsgf of arr){
+        console.log(jhsgf)
+      }
+
+      let numb = 0
+    //   while (numb < courses.length) {
+    //     schoolEl.innerHTML += `
+    //         <div>
+    //             <h2>${courses[numb].head}</h2> 
+    //             <p>${courses[numb].name}</p>   
+            // </div>
+    //       `;
+    //     numb++
+    //   }
+    // do {
+    //     console.log(numb)
+    // } while (numb < 1);
+
+
+    </script>
+  </body>
+</html>
