@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+          .products-con {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .product-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1rem;
+    background: #f9f9f9;
+    display: block;
+  }
+    </style>
+  </head>
+  <body>
+    <h1>Hello</h1>
+
+    <div class="products-con"></div>
+
+    <script>
+     
+      const container = document.querySelector(".products-con");
+
+      const fetchProducts = async ()=>{
+        try {
+            const res = await fetch("https://fakestoreapi.com/products")
+            const data = await res.json()
+            data.forEach(product => {
+                container.innerHTML += `
+                    <div class="product-card">
+                        <h2>${product.title}</h2>
+                        <p>${product.category}</p>
+                        <a href="/query/product.html?id=${product.id}">View Product</a>
+                    </div>
+                `
+            })
+           
+        } catch (error) {
+            console.log(error)
+        }
+      }
+
+      fetchProducts()
+     
+   
+   
+      
+
+   </script>
+  </body>
+</html>

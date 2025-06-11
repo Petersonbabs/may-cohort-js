@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <div class="movies"></div>
+    <script>
+
+    const accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4OTgwYTZhZjhlNzFhN2NiZTgzMGMyYWU1NzliNDBiYyIsIm5iZiI6MTc0OTYzNDQyNC43MTksInN1YiI6IjY4NDk0ZDc4Zjk0ODFkZTRmODM0MzE1NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IFD03KUm17QbAwrE-8TopzbqacbN19uacXP4VIpLvrw"
+
+    const baseUrl = "https://api.themoviedb.org/3"
+    const moviesEl = document.querySelector(".movies")
+
+      const getPopularMovies = async ()=>{
+        try {
+            const res = await fetch(`${baseUrl}/movie/popular`, {
+                headers: {
+                    accept : "application/json",
+                    Authorization: `Bearer ${accessToken}`
+                }
+            })
+            const data = await res.json()
+            console.log(data)
+            data.results.forEach(movie=>{
+                moviesEl.innerHTML += `
+                    <div>
+                        <img src="${movie.backdrop_path}" >
+                        <h2>${movie.original_title}</h2>
+                    </div>
+                `
+            })
+        } catch (error) {
+            console.log(error)
+        }
+      }
+
+      getPopularMovies()
+
+    </script>
+
+    <!-- eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4OTgwYTZhZjhlNzFhN2NiZTgzMGMyYWU1NzliNDBiYyIsIm5iZiI6MTc0OTYzNDQyNC43MTksInN1YiI6IjY4NDk0ZDc4Zjk0ODFkZTRmODM0MzE1NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IFD03KUm17QbAwrE-8TopzbqacbN19uacXP4VIpLvrw -->
+
+    <!-- 8980a6af8e71a7cbe830c2ae579b40bc -->
+
+    <!-- https://api.themoviedb.org/3/genre/movie/list?language=en' -->
+  </body>
+</html>
