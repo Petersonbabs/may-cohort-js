@@ -7,10 +7,34 @@
   </head>
   <body>
 
+      <button onclick="redirect()">Go to dashboard</button>
     <div class="movies"></div>
     <script>
 
+
+        const redirect = ()=>{
+            window.location.href = "./dashboard.html"
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4OTgwYTZhZjhlNzFhN2NiZTgzMGMyYWU1NzliNDBiYyIsIm5iZiI6MTc0OTYzNDQyNC43MTksInN1YiI6IjY4NDk0ZDc4Zjk0ODFkZTRmODM0MzE1NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IFD03KUm17QbAwrE-8TopzbqacbN19uacXP4VIpLvrw"
+
+    
+    
 
     const baseUrl = "https://api.themoviedb.org/3"
     const moviesEl = document.querySelector(".movies")
